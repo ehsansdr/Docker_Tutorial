@@ -130,8 +130,18 @@ docker container prune
 
 To clear up disk space on the Docker host, you can use the docker container prune command to remove all stopped containers.         
 It is a practical method of clearing out empty containers and recovering resources.            
+
+
 for forcly removing :                 
 
 docker container prune -f           
 docker container prune --force
 
+If you want to remove all Docker containers together, you can use a chain two commands               
+- “docker ps -aq”   (return all containers)
+ which is used to obtain a list of all container IDs and combine it with the “docker rm” command to remove all containers, including running containers.
+
+
+docker rm (docker ps -aq) 
+
+it will remove the out put of (docker ps -aq)
