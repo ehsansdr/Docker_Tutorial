@@ -124,4 +124,9 @@ to forcefully remove running containers, you can use the -f or --force flag.
  docker rm my_container --force                
 
 
+### removing all stopped docker container 
 
+docker container prune
+
+To clear up disk space on the Docker host, you can use the docker container prune command to remove all stopped containers.         
+It is a practical method of clearing out empty containers and recovering resources.
