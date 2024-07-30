@@ -56,14 +56,22 @@ you create the container by using that on the image
 If the image isn't already available locally,
 Docker pulls it from a registry when you run this command (if not jut after that press enter)               
 
-### Stopping a Docker Container
-docker stop (container name or container ID )
+### Stopping a Docker Container                   
+docker stop (container name or container ID )              
 
-docker stop my_container
+docker stop my_container                
 docker stop 39e6ae659d8f
 
+### Pausing a Running Container
 
- 
+docker pause (container name or container ID )              
+
+docker pause my_container      
+docker pause 39e6ae659d8f                             
+
+This command stops the container "my_container" or 39e6ae659d8f from running.                                
+The container uses no CPU or memory when it is paused because its processes are frozen. The container does,                  
+however, keep its resource allocation and configuration settings.
 
 
 
