@@ -64,7 +64,7 @@ docker stop 39e6ae659d8f
 
 ### Pausing a Running Container
 
-docker pause (container name or container ID )              
+docker pause (container name or container ID)              
 
 docker pause my_container      
 docker pause 39e6ae659d8f                             
@@ -73,5 +73,14 @@ This command stops the container "my_container" or 39e6ae659d8f from running.
 The container uses no CPU or memory when it is paused because its processes are frozen. The container does,                  
 however, keep its resource allocation and configuration settings.
 
+
+### Resuming a Docker Container        
+docker unpause (container name or container ID)
+
+docker unpause my_container
+docker unpause 39e6ae659d8f
+
+When a container is paused, its processes can be carried out again by using the docker unpause command. By using this command,           
+the container returns to its initial state and undoes the effects of the docker pause command.
 
 
