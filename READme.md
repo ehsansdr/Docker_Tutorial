@@ -95,7 +95,32 @@ docker restart 39e6ae659d8f
  It is frequently used to force a container to reinitialize                    
  after experiencing problems or to apply changes to the configuration of a running container.               
  This command pauses and then resumes the execution of the container.
- The processes inside the container are stopped and then restarted upon restarting, enabling any modifications to take effect.        
+ The processes inside the container are stopped and then restarted upon restarting, enabling any modifications to take effect.
+
+ ### Executing Commands in a Running Docker Container                   
+docker exec -it (container name or container ID) bash       
+
+docker exec -it my_container bash         
+docker exec -it jovial_cray bash 
 
  
+
+### Removing a Docker Container
+
+$ docker rm (stopped  container name or stopped  container ID)                    
+     
+$ docker rm my_container        
+
+To remove a Docker container or containers, you can use the docker rm command. The container(s) whose ID or name you wish to remove can 
+ be specified. 
+This command only removes stopped containers by default;         
+to forcefully remove running containers, you can use the -f or --force flag.
+
+$ docker rm (stopped  container name or stopped  container ID) -f                   
+$ docker rm my_container -f                   
+
+$ docker rm (stopped  container name or stopped  container ID) --force                          
+$ docker rm my_container --force                
+
+
 
