@@ -109,8 +109,9 @@ docker exec -it jovial_cray bash
 
  docker rm (stopped  container name or stopped  container ID)                    
      
- docker rm my_container        
-
+ docker rm my_container          
+ 
+You cannot remove a running container by this command
 To remove a Docker container or containers, you can use the docker rm command. The container(s) whose ID or name you wish to remove can 
  be specified. 
 This command only removes stopped containers by default;         
