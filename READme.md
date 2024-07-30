@@ -107,20 +107,20 @@ docker exec -it jovial_cray bash
 
 ### Removing a Docker Container
 
-$ docker rm (stopped  container name or stopped  container ID)                    
+ docker rm (stopped  container name or stopped  container ID)                    
      
-$ docker rm my_container        
+ docker rm my_container        
 
 To remove a Docker container or containers, you can use the docker rm command. The container(s) whose ID or name you wish to remove can 
  be specified. 
 This command only removes stopped containers by default;         
 to forcefully remove running containers, you can use the -f or --force flag.
 
-$ docker rm (stopped  container name or stopped  container ID) -f                   
-$ docker rm my_container -f                   
+ docker rm (stopped  container name or stopped  container ID) -f                   
+ docker rm my_container -f                   
 
-$ docker rm (stopped  container name or stopped  container ID) --force                          
-$ docker rm my_container --force                
+ docker rm (stopped  container name or stopped  container ID) --force                          
+ docker rm my_container --force                
 
 
 
