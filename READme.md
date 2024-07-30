@@ -48,15 +48,22 @@ It returns an empty list if no containers are in use.
 
 
 ### Running a Docker Container
-docker run -d -p (port):(post) (image name)              
+docker run -d -p (host port):(container port) (image name)              
 
- docker run -d -p 8080:80 nginx 
+ docker run -d -p 8080:80 nginx ((-d) creates a new container based on the image and runs it in the background)
 
 you create the container by using that on the image
 If the image isn't already available locally,
 Docker pulls it from a registry when you run this command (if not jut after that press enter)               
 
+### Stopping a Docker Container
+docker stop (container name or container ID )
 
+docker stop my_container
+docker stop 39e6ae659d8f
+
+
+ 
 
 
 
