@@ -57,7 +57,7 @@ If the image isn't already available locally,
 Docker pulls it from a registry when you run this command (if not jut after that press enter)               
 
 ### Stopping a Docker Container                   
-docker stop (container name or container ID )              
+docker stop (container name or container ID)              
 
 docker stop my_container                
 docker stop 39e6ae659d8f
@@ -75,12 +75,23 @@ however, keep its resource allocation and configuration settings.
 
 
 ### Resuming a Docker Container        
-docker unpause (container name or container ID)
+docker unpause (paused container name or paused container ID)
+ 
+docker unpause my_container                            
+docker unpause 39e6ae659d8f                   
 
-docker unpause my_container
-docker unpause 39e6ae659d8f
-
+The above command resumes the paused container
 When a container is paused, its processes can be carried out again by using the docker unpause command. By using this command,           
 the container returns to its initial state and undoes the effects of the docker pause command.
 
+
+### Restarting a Container
+
+docker restart (container name or container ID)     
+
+docker restart my_container           
+docker restart 39e6ae659d8f          
+
+ It is frequently used to force a container to reinitialize                    
+ after experiencing problems or to apply changes to the configuration of a running container.               
 
