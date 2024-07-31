@@ -19,6 +19,9 @@ https://app.docker.com/
 and the tutorial for the usinf hub :     
 https://www.tutorialspoint.com/docker/docker_hub.htm
 
+best extension for docker for programming:       
+[top-docker-extensions-for-developers](https://digma.ai/top-docker-extensions-for-developers/#vulnerability-detection)
+
 *************************************
 ## Learing
 
@@ -71,7 +74,7 @@ Docker pulls it from a registry when you run this command (if not jut after that
 
 `docker pause my_container`   
 
-`docker pause 39e6ae659d8f`                             
+`docker pause 39e6ae659d8f`                               
 
 This command stops the container "my_container" or 39e6ae659d8f from running.                                
 The container uses no CPU or memory when it is paused because its processes are frozen. The container does,                  
@@ -89,6 +92,11 @@ The above command resumes the paused container
 When a container is paused, its processes can be carried out again by using the docker unpause command. By using this command,           
 the container returns to its initial state and undoes the effects of the docker pause command.
 
+### running stopped container
+
+`docker run -e (Stopped container name or ID) (image name)`
+
+`docker run -e jovial_cray docker/getting-started`
 
 ### Restarting a Container
 
@@ -152,3 +160,14 @@ If you want to remove all Docker containers together, you can use a chain two co
 `docker rm (docker ps -aq)` 
 
 it will remove the out put of (docker ps -aq)
+
+
+### getting docker version
+
+`docker -v`
+
+`docker --version`
+
+
+
+
