@@ -169,5 +169,30 @@ it will remove the out put of (docker ps -aq)
 `docker --version`
 
 
+### getting all installed images
+``
+`docker images`
+
+
+### Push Images from Docker Hub
+
+Before you push an image to Docker Hub, you should ensure that it is properly tagged with the repository name and version.
+
+Here, we will use a "hello-world" image from the Docker Hub public repository for reference. You can tag an image using the following command −
+
+`docker tag <image_id> <username/repository_name:tag>`
+
+`docker tag d2c94e258dcb iamrj888/myfirstrepo:v1`
+
+ **repository name must be lowercase**
+
+ **do not need to have github, you will have identical image with the drfrent name**
+
+
+
+
+
+
+
 
 
