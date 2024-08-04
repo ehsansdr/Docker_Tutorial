@@ -184,6 +184,10 @@ Here, we will use a "hello-world" image from the Docker Hub public repository fo
 
 `docker tag d2c94e258dcb iamrj888/myfirstrepo:v1`
 
+creates a new tag for an existing Docker image. 
+Tags allow you to label and reference multiple versions of an image.
+This command is frequently used before uploading an image to a registry under a different tag.
+
  **repository name must be lowercase**
 
  **do not need to have github,you need the password you set in** docker hub **you will have identical image with the drfrent name**
@@ -215,8 +219,43 @@ You can use the Docker pull command to pull the images from Docker Hub.
 `docker pull <username/repository_name:tag>`
 
 
+### Removing Docker Images
+
+`docker rmi <repository_name:tag>`
+
+`docker rmi myapp:latest`
+
+    PS C:\Java projects\Docker_Tutorial> docker images
+    REPOSITORY                             TAG       IMAGE ID       CREATED         SIZE
+    ehsan/ehsan_repo                       latest    d2c94e258dcb   15 months ago   13.3kB
+    PS C:\Java projects\Docker_Tutorial> docker rmi ehsan/ehsan_repo
+    Untagged: ehsan/ehsan_repo:latest
+ means : successful
+
+The docker rmi command removes one or more Docker images from your local machine.
+You can provide either the image name or the image ID.
 
 
+### Pruning Docker Images
+The docker image prune command removes unused Docker images from your local machine.                
+This command is useful for freeing up disk space by removing images                  
+that are no longer associated with any containers or tags.         
+
+**Options** 
+
+    -a, --all − Delete all unused images, not just the dangling ones.
+    -f, --force − Don't ask for confirmation before cleaning.
+
+    docker image prune -a
+
+### Viewing Docker Image History                  
+The docker image history command shows the history of a Docker image,          
+including the commands and instructions used during the image-building process.         
+This can be useful for determining how an image is formed and diagnosing problems.      
+
+    docker image history <image name>:latest
+
+    docker image history myimage:latest
 
 
 
