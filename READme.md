@@ -24,7 +24,7 @@ best extension for docker for programming:
 
 *************************************
 ## Learing
-
+### **you can use intellij idea terminal** 
 in english :  
 https://docker-curriculum.com/
 https://www.tutorialspoint.com/docker/docker_installation.htm
@@ -32,7 +32,7 @@ https://www.tutorialspoint.com/docker/docker_installation.htm
 in persian :        
 https://tosinso.com/courses/docker-virtualization-step-by-step
 
-if you wan to get help paste this in cmd :       
+if you want to get help paste this in cmd :       
  
   docker run --help
 
@@ -174,7 +174,7 @@ it will remove the out put of (docker ps -aq)
 `docker images`
 
 
-### Push Images from Docker Hub
+### Push Images from Docker Hub (private repo)
 
 Before you push an image to Docker Hub, you should ensure that it is properly tagged with the repository name and version.
 
@@ -186,9 +186,36 @@ Here, we will use a "hello-world" image from the Docker Hub public repository fo
 
  **repository name must be lowercase**
 
- **do not need to have github, you will have identical image with the drfrent name**
+ **do not need to have github,you need the password you set in** docker hub **you will have identical image with the drfrent name**
 
-### 
+###  Log in to Docker Hub
+
+`docker login`
+
+you need to enter username and password
+
+go to [https://hub.docker.com/](https://hub.docker.com/) create account and then 
+enter the username and pass word and wait
+
+### Push the Image
+
+you need to log in
+
+Now that you have logged in,                 
+you can use the docker push command to push the tagged image to Docker Hub.
+
+`docker push <username/repository_name:tag>`
+
+You can verify the pushed image in the Docker Hub repositories.
+
+### Pulling Images from Docker Hub
+
+You can use the Docker pull command to pull the images from Docker Hub.
+
+`docker pull <username/repository_name:tag>`
+
+
+
 
 
 
@@ -198,17 +225,17 @@ docker image COMMAND
 
 Manage images
 
-Commands:
-  build       Build an image from a Dockerfile
-  history     Show the history of an image
-  import      Import the contents from a tarball to create a filesystem image
-  inspect     Display detailed information on one or more images
-  load        Load an image from a tar archive or STDIN
-  ls          List images
-  prune       Remove unused images
-  pull        Pull an image or a repository from a registry
-  push        Push an image or a repository to a registry
-  rm          Remove one or more images
-  save        Save one or more images to a tar archive (streamed to STDOUT by default)
-  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+Commands:              
+  `build`       Build an image from a Dockerfile                      
+  `history`     Show the history of an image                
+  `import`      Import the contents from a tarball to create a filesystem image             
+  `inspect`     Display detailed information on one or more images                 
+  `load`        Load an image from a tar archive or STDIN                  
+  `ls`          List images                  
+  `prune`       Remove unused images            
+  `pull`        Pull an image or a repository from a registry          
+  `push`        Push an image or a repository to a registry           
+  `rm`          Remove one or more images                
+  `save`        Save one or more images to a tar archive (streamed to STDOUT by default)            
+  `tag`         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE                  
 
