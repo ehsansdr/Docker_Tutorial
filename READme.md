@@ -180,7 +180,7 @@ Before you push an image to Docker Hub, you should ensure that it is properly ta
 
 Here, we will use a "hello-world" image from the Docker Hub public repository for reference. You can tag an image using the following command −
 
-`docker tag <image_id> <username/repository_name:tag>`
+`docker tag <image_id(the image you want to have same as that)> <username/repository_name:tag>`
 
 `docker tag d2c94e258dcb iamrj888/myfirstrepo:v1`
 
@@ -188,11 +188,27 @@ Here, we will use a "hello-world" image from the Docker Hub public repository fo
 
  **do not need to have github, you will have identical image with the drfrent name**
 
+### 
 
 
 
 
 
+docker image COMMAND
 
+Manage images
 
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 
