@@ -4,7 +4,7 @@
  guiding for installing             
  https://developersho.com/blog/install-docker-desktop-on-windows                
  https://developersho.com/blog/how-to-install-windows-subsystem-for-linux-on-windows              
-(the link for download in includid)               
+(the link for download in included)               
 
 or     
 https://docs.docker.com/desktop/           
@@ -172,6 +172,21 @@ it will remove the out put of (docker ps -aq)
 ### getting all installed images
 ``
 `docker images`
+If you want to just display the Image IDs, you can use the "–quiet" flag.
+
+`docker image ls -q`
+
+    PS C:\Java projects\Docker_Tutorial> docker image ls -q
+    209ed7c86ebd
+    90ec73daf8e7
+    a72860cb95fd
+    07a4ee949b9e
+    cea77dc94bbc
+    1a0fb356ea35
+    d2c94e258dcb
+    3597029f1608
+    b08571911ecf
+
 
 
 ### Push Images from Docker Hub (private repo)
@@ -210,6 +225,20 @@ you can use the docker push command to push the tagged image to Docker Hub.
 
 `docker push <username/repository_name:tag>`
 
+`docker push hello-world:latest`
+
+`REPOSITORY                             TAG       IMAGE ID       CREATED         SIZE
+ mochoa/pgadmin4-docker-extension       8.10.0    209ed7c86ebd   12 days ago     11.8MB
+ dpage/pgadmin4                         8.10      90ec73daf8e7   12 days ago     481MB
+ postgres                               latest    07a4ee949b9e   3 months ago    432MB
+ snyk/snyk-docker-desktop-extension     0.9.0     cea77dc94bbc   3 months ago    83.7kB
+ portainer/portainer-docker-extension   2.19.4    1a0fb356ea35   8 months ago    294MB
+ hello-world                            latest    d2c94e258dcb   15 months ago   13.3kB
+ ddosify/ddosify-docker-extension       0.2.3     3597029f1608   16 months ago   20.1MB
+ jfrog/jfrog-docker-desktop-extension   1.2.1     b08571911ecf   23 months ago   83.4MB
+`
+
+
 You can verify the pushed image in the Docker Hub repositories.
 
 ### Pulling Images from Docker Hub
@@ -217,6 +246,8 @@ You can verify the pushed image in the Docker Hub repositories.
 You can use the Docker pull command to pull the images from Docker Hub.
 
 `docker pull <username/repository_name:tag>`
+
+`docker pull hello-world:latest`
 
 
 ### Removing Docker Images
@@ -278,3 +309,8 @@ Commands:
   `save`        Save one or more images to a tar archive (streamed to STDOUT by default)            
   `tag`         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE                  
 
+********************
+
+for creating postgres container:
+
+    docker run -d -e POSTGRES_USERNAME=postges -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
