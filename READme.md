@@ -314,3 +314,30 @@ Commands:
 for creating postgres container:
 
     docker run -d -e POSTGRES_USERNAME=postges -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
+
+
+
+*************************
+Vulume
+
+for  creating volume in docker us should prepare the folder for that and then toy should give it 
+to the docker like this :
+
+  $ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
+
+this part create volume and -v /some/content: is the folder that you can create in your machine
+This is the path on your host machine (your computer where Docker is running). It represents a directory (or a file) that you want to share with the container. You need to replace /some/content with the actual path to the directory on your computer where your website files (HTML, CSS, JavaScript, images, etc.) are located. For example, if your website files are in a directory named my-website in your home directory, you would use /home/yourusername/my-website (on Linux/macOS) or C:\Users\YourUsername\my-website (on Windows, using Docker Desktop and sharing drive).
+
+and :/usr/share/nginx/html:ro  is solid part 
+ro means readonly volume 
+* -v /some/content:/usr/share/nginx/html:ro 
+
+This is the path inside the Docker container where the host directory will be mounted. /usr/share/nginx/html is the default document root directory for Nginx within the official Nginx Docker image. By mounting your host directory to this location inside the container, you are effectively replacing the default Nginx welcome page with your own website content.
+:ro: This is an option that specifies the mount as read-only (ro). This means that the Nginx process inside the container can only read the files from the mounted directory. It cannot write to or modify the files within /some/content on your host machine from inside the container. This is a good security practice if you only want to serve static content and don't need the container to modify your files. If you wanted the container to be able to write to the volume (for example, if it were an application that needed to upload files or create logs), you would omit :ro or use :rw for read-write access (though for web content serving, read-only is generally preferred for static files).
+
+    docker run --name website -v /home/novin/Desktop/website:/usr/share/nginx/html:rw -d nginx
+
+    or
+
+    docker run -v $(pwd):/usr/share/nginx/html:ro  -d -p 8000:80 --name website nginx:latest
+
