@@ -341,3 +341,25 @@ This is the path inside the Docker container where the host directory will be mo
 
     docker run -v $(pwd):/usr/share/nginx/html:ro  -d -p 8000:80 --name website nginx:latest
 
+
+for creating docker file create the Dockerfile in the root and paste the code loke this or diffrent :
+
+
+
+     FROM nginx:latest
+     add . /usr/share/nginx/html
+
+
+ for creating the image fromt that cd in the directory that has the docker file :
+
+ and paste this :
+ 
+    docker build --tag <nmae-of-the-image>:latest .
+
+    novin@Ehsan:~/Desktop/website$ ls
+    assets  contact.html  css  Dockerfile  index.html  js  projects.html  resume.html
+
+    novin@Ehsan:~/Desktop/website$ docker build --tag website:latest .
+
+
+
