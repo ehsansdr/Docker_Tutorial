@@ -359,6 +359,19 @@ for creating docker file create the Dockerfile in the root and paste the code lo
     novin@Ehsan:~/Desktop/website$ ls
     assets  contact.html  css  Dockerfile  index.html  js  projects.html  resume.html
 
+
+
+
+    *************************
+
+    **************************************************************
+# Bugs:
+
+when you create multiple container of the same image on post 8080:8000 and 8081:8000 and 8082:8000 (memoraize this port)    
+you may not acess to them by localhost 
+change the in put of the container port not the host port to the familiar port like 80
+like : 8080:80 and 8081:80 and 8082:80 and it may fix 
+
     novin@Ehsan:~/Desktop/website$ docker build --tag website:latest .
 
 
