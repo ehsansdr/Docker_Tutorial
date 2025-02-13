@@ -361,10 +361,7 @@ for creating docker file create the Dockerfile in the root and paste the code lo
 
 
 
-
-    *************************
-
-    **************************************************************
+**************************************************************
 # Bugs:
 
 when you create multiple container of the same image on post 8080:8000 and 8081:8000 and 8082:8000 (memoraize this port)    
