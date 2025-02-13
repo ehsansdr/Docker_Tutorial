@@ -341,35 +341,23 @@ This is the path inside the Docker container where the host directory will be mo
 
     docker run -v $(pwd):/usr/share/nginx/html:ro  -d -p 8000:80 --name website nginx:latest
 
-for downloading  freebotStrao you can see :
-[text](https://startbootstrap.com/themes)
 
-
-for copy the volume to anouther container :
-      
-      docker run --name <new-container-name> --volumes-from <old-container-name>  -d -p 8081:80 <images> 
-
-
-      docker run --name website-copy --volumes-from website  -d -p 8081:80 nginx 
-be care ful the new and the old container use the same folder and if you 
-change the folder content for both will change
-
-**************************
-# docker file 
-
-you ca see this site to know more information :         
-[docker file refrences](https://docs.docker.com/build/concepts/dockerfile/)
+for creating docker file create the Dockerfile in the root and paste the code loke this or diffrent :
 
 
 
+     FROM nginx:latest
+     add . /usr/share/nginx/html
 
 
+ for creating the image fromt that cd in the directory that has the docker file :
 
+ and paste this :
+ 
+    docker build --tag <nmae-of-the-image>:latest .
 
-
-
-
-
+    novin@Ehsan:~/Desktop/website$ ls
+    assets  contact.html  css  Dockerfile  index.html  js  projects.html  resume.html
 
 
 
@@ -380,3 +368,7 @@ when you create multiple container of the same image on post 8080:8000 and 8081:
 you may not acess to them by localhost 
 change the in put of the container port not the host port to the familiar port like 80
 like : 8080:80 and 8081:80 and 8082:80 and it may fix 
+
+    novin@Ehsan:~/Desktop/website$ docker build --tag website:latest .
+
+
